@@ -1,4 +1,6 @@
-﻿// Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Validation;
 using System.IO;
@@ -29,7 +31,7 @@ namespace DocumentFormat.OpenXml.Tests
                 using (var doc = PresentationDocument.Open(package, openSettings))
                 {
                     var v = new OpenXmlValidator(FileFormatVersions.Office2013);
-            
+
                     Assert.Empty(v.Validate(doc));
                 }
             }
@@ -47,7 +49,7 @@ namespace DocumentFormat.OpenXml.Tests
             using (var doc = PresentationDocument.Open(stream, false, openSettings))
             {
                 var v = new OpenXmlValidator(FileFormatVersions.Office2013);
-            
+
                 Assert.Empty(v.Validate(doc));
             }
         }
@@ -66,7 +68,7 @@ namespace DocumentFormat.OpenXml.Tests
                 using (var doc = PresentationDocument.Open(package, openSettings))
                 {
                     var v = new OpenXmlValidator(FileFormatVersions.Office2013);
-            
+
                     Assert.Empty(v.Validate(doc));
                 }
             }
@@ -84,7 +86,7 @@ namespace DocumentFormat.OpenXml.Tests
             using (var doc = PresentationDocument.Open(stream, false))
             {
                 var v = new OpenXmlValidator(FileFormatVersions.Office2013);
-            
+
                 Assert.Empty(v.Validate(doc));
             }
         }
@@ -369,7 +371,6 @@ namespace DocumentFormat.OpenXml.Tests
 
             themePart1.Theme = theme1;
             return themePart1;
-
         }
 
         [Fact]
@@ -402,7 +403,7 @@ namespace DocumentFormat.OpenXml.Tests
                 tnPart = doc.AddThumbnailPart("image/jpg");
 
                 var v = new OpenXmlValidator(FileFormatVersions.Office2013);
-            
+
                 Assert.Empty(v.Validate(doc));
             }
         }
